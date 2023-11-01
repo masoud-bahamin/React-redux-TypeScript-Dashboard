@@ -1,4 +1,15 @@
-# React + TypeScript + Vite
+
+# React + TypeScript + Tailwind + Redux + rest full API
+
+used libraries : redux-toolkit , react-redux ,  axios , formik , yup , sweetalert2 , react-router-dom
+
+With real API that can get or add or remove users and courses
+
+
+
+
+
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
