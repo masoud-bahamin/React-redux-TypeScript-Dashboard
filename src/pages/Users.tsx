@@ -3,7 +3,7 @@ import { addUser, getUsers } from '../Redux/store/users'
 import UserBox from '../components/users/UserBox'
 import { useAppDispatch, useAppSelector } from '../Hooks/ReduxHooks'
 import UserBoxLoading from '../components/users/UserBoxLoading'
-import { Formik, Form, Field , FormikProps} from 'formik'
+import { Formik, Form, Field} from 'formik'
 import * as Yup from "yup"
 
 export default function Users() {
