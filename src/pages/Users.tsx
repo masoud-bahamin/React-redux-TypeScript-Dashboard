@@ -27,7 +27,7 @@ export default function Users() {
     const submitHandler = (values: intialFormUserType) => {
         const { firstname, lastname, email, username } = values
         const newUser = {
-            _id: crypto.randomUUID(),
+            _id: `${Math.floor(Math.random() * 999999999)}`,
             firstname,
             lastname,
             email,
@@ -321,7 +321,7 @@ export default function Users() {
                     </ul>
                 </div>
             </main>
-            <aside className="hidden xl:block xl:col-span-5">
+            <aside className=" xl:block xl:col-span-5">
                 {users.status === "rejected" ? (
                     <div className='p-4'>
                         <div className='flex justify-between'>

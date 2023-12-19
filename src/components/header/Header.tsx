@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function Header() {
 
@@ -55,7 +56,7 @@ export default function Header() {
                     </div>
                     <div className="flex items-center md:absolute md:right-0 md:inset-y-0 lg:hidden">
                         {/* Mobile menu button */}
-                        <button onClick={() => setIsShowMenu(prev => !prev)} onBlur={() => setIsShowMenu(false)}
+                        <button onClick={() => setIsShowMenu(prev => !prev)} 
                             type="button"
                             className="-mx-2 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-rose-500"
                             aria-expanded="false"
@@ -206,28 +207,28 @@ Leaving: "transition ease-in duration-75"
                 </div>
             </div>
             {/* Mobile menu, show/hide based on menu state. */}
-            <nav className={`lg:hidden ${isShowMenu ? "block" : "hidden"}`} aria-label="Global">
+            <nav className={`lg:hidden ${isShowMenu ? "block" : "hidden"}`} aria-label="Global" onBlur={() => setIsShowMenu(false)} onClick={() => setIsShowMenu(false)}>
                 <div className="max-w-3xl mx-auto px-2 pt-2 pb-3 space-y-1 sm:px-4">
                     {/* Current: "bg-gray-100 text-gray-900", Default: "hover:bg-gray-50" */}
-                    <a
-                        href="#"
+                    <NavLink
+                        to={"/"}
                         aria-current="page"
                         className="bg-gray-100 text-gray-900 block rounded-md py-2 px-3 text-base font-medium"
                     >
                         Home
-                    </a>
-                    <a
-                        href="#"
+                    </NavLink>
+                    <NavLink
+                        to={"/users"}
                         className="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium"
                     >
-                        Popular
-                    </a>
-                    <a
-                        href="#"
+                        Users
+                    </NavLink>
+                    <NavLink
+                        to={"/courses"}
                         className="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium"
                     >
-                        Communities
-                    </a>
+                        Courses
+                    </NavLink>
                     <a
                         href="#"
                         className="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium"

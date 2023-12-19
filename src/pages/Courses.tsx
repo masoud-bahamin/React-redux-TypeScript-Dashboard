@@ -7,7 +7,7 @@ import CourseBoxLoading from '../components/courses/CourseBoxLoading'
 export default function Courses() {
 
     const [course, setCourse] = React.useState<CourseType>({
-        _id: crypto.randomUUID(),
+        _id: `${Math.floor(Math.random() * 999999999)}`,
         title: "",
         price: 0,
         category: "frontend",
@@ -36,7 +36,7 @@ export default function Courses() {
     const submitHandler = () => {
         dispatch(addCourse(course))
         setCourse({
-            _id: crypto.randomUUID(),
+            _id: `${Math.floor(Math.random() * 999999999)}`,
             title: "",
             price: 0,
             category: "frontend",
@@ -92,12 +92,12 @@ export default function Courses() {
                                                     <div>
                                                         <label htmlFor="price" className='block'>Price:</label>
                                                         <input value={course?.price} onChange={courseHandler}
-                                                            className='border p-2 rounded-lg min-w-[100px] mb-3' type="number" name='price' placeholder='Price' />
+                                                            className='border p-2 rounded-lg w-[140px] mb-3' type="number" name='price' placeholder='Price' />
                                                     </div>
                                                     <div>
                                                         <label htmlFor="registersCount" className='block'>registersCount:</label>
                                                         <input value={course?.registersCount} onChange={courseHandler}
-                                                            className='border p-2 rounded-lg min-w-[100px] mb-3' type="text" name='registersCount' placeholder='RegistersCount' />
+                                                            className='border p-2 rounded-lg w-[140px] mb-3' type="text" name='registersCount' placeholder='RegistersCount' />
                                                     </div>
                                                 </div>
                                                 <div><button onClick={submitHandler}
